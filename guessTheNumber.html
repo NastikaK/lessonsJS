@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Угадай число</title>
+</head>
+
+<body>
+    <script>
+        var answer = parseInt(Math.random() * 100);
+        var attempt = 1;
+        var attemptsCount = 999;
+
+        alert('Игра "Угадай число" для двух игроков.\nНачнем?')
+        var userOne = prompt("Введите ник игрока №1")
+        var userTwo = prompt("Введите ник игрока №2")
+
+        if (userOne == userTwo) {
+            alert("Ники игроков должны быть разные!")
+            var userTwo = prompt("Введите другой ник игрока №2")
+        }
+
+        while (attempt <= attemptsCount) {
+            var userOneAnswer = prompt("Ход игрока " + userOne + "\nВведите ответ:");
+            userOneAnswer = parseInt(userOneAnswer);
+
+            if (userOneAnswer > answer) {
+                alert("Ответ игрока " + userOne + " больше загаданного числа.");
+            } else if (userOneAnswer < answer) {
+                alert("Ответ игрока " + userOne + " меньше загаданного числа.");
+            } else if (userOneAnswer == answer) {
+                document.write("Игрока" + userOne + " поздравляем с победой!");
+                break;
+            }
+            var userTwoAnswer = prompt("Ход игрока " + userTwo + "\nВведите ответ:");
+            userTwoAnswer = parseInt(userTwoAnswer);
+
+            if (userTwoAnswer > answer) {
+                alert("Ответ игрока " + userTwo + " больше загаданного числа.");
+            } else if (userTwoAnswer < answer) {
+                alert("Ответ игрока " + userTwo + " меньше загаданного числа.");
+            } else if (userTwoAnswer == answer) {
+                document.write("Игрока " + userTwo + " поздравляем с победой!");
+                break;
+            }
+            attempt++;
+        }
+    </script>
+</body>
+
+</html>
