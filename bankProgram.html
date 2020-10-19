@@ -10,11 +10,11 @@
     <script>
         alert("Приветсвуем на нашем сайте! Данный калькулятор поможет быстро рассчитать размер Вашего вклада в ближайшие 5 лет")
         document.write("Размер вклада за последующие 5 лет:" + "<br>");
-        var sum = parseInt(prompt("Введите сумму вклада в рублях"));
-        var rate = parseInt(prompt("Введите процентную ставку"));
+        let sum = parseInt(prompt("Введите сумму вклада в рублях"));
+        const rate = parseInt(prompt("Введите процентную ставку"));
 
-        for (var i = 1; i <= 5; i++) {
-            sum = sum * rate / 100 + sum;
+        for (let i = 1; i <= 5; i++) {
+            sum += sum * rate / 100;
             document.write(i + " год " + sum.toFixed(2) + " рублей" + "<br>");
         }
 
