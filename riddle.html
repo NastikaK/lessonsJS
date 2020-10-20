@@ -13,41 +13,45 @@
 
         let sum = 0;
         let lock = prompt('Отгадайте загадку: "Не лает, не кусает, в дом не пускает"');
-        if (lock.toLowerCase() == "замок") {
+        lock = lock.toLowerCase();
+        if (lock == "замок") {
             alert("Вы угадали!");
-            sum = sum + 1;
+            sum++;
         } else {
             alert("Ответ не верный");
         }
 
         let fir = prompt('Отгадайте загадку: "Зимой и летом одним цветом"');
-        if (fir.toLowerCase == "ель", "ёлка", "елка", "ёлочка", "елочка") {
+        fir = fir.toLowerCase();
+        if (fir == "ель" || fir == "ёлка" || fir == "елка" || fir == "ёлочка" || fir == "елочка") {
             alert("Вы угадали!");
-            sum = sum + 1;
+            sum++;
         } else {
             alert("Ответ не верный");
         }
 
         let hare = prompt('Отгадайте загадку: "Летом серый, зимой белый"');
-        if (hare.toLowerCase() == "заяц", "зайка", "зайчик") {
+        hare = hare.toLowerCase();
+        if (hare == "заяц" || hare == "зайка" || hare == "зайчик") {
             alert("Вы угадали!");
-            sum = sum + 1;
+            sum++;
         } else {
             alert("Ответ не верный");
         }
 
         let carrot = prompt('Отгадайте загадку: "Красная девица cидит в темнице, а коса на улице"');
-        if (carrot == "морковь", "морковка", "моркошка") {
+        carrot = carrot.toLowerCase();
+        if (carrot == "морковь" || carrot == "морковка" || carrot == "моркошка") {
             alert("Вы угадали!");
-            sum = sum + 1;
+            sum++;
         } else {
             alert("Ответ не верный");
         }
 
         if (sum > 0) {
-            alert("Поздравляем Вас с окончанием игры! Вы угадали " + sum + " загадки(у)");
+            document.write("Поздравляем Вас с окончанием игры! Вы угадали " + sum + " загадки(у)");
         } else {
-            alert("К сожалению, Вы не угадали ни одну загадку :(");
+            document.write("К сожалению, Вы не угадали ни одну загадку :(");
         }
 
     </script>
