@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>обучение слепой печати</title>
+</head>
+
+<body>
+    <script>
+
+        function generateText(letters, length) {
+
+            let text = "";
+            for (let i = 1; i <= length; i++) {
+                let n = getRandomNumber(letters.length - 1);
+                text = text + letters[n];
+            }
+            return text;
+        }
+
+
+        function getRandomNumber(max) {
+            return Math.round(Math.random() * max);
+        }
+
+        function runTraining(bref, letters, length) {
+            while (true) {
+                alert(bref)
+                let text = generateText(letters, length);
+                let userText = prompt(text);
+                if (userText == text) {
+                    alert("Всё верно! Вы можете перейти на следующий уровень. ");
+                    break;
+                } else {
+                    alert("Вы ошиблись. Попробуйте пройти данный уровень ещё раз. ");
+                }
+            }
+        }
+
+
+        alert("Вас приветствует программа слепой печати!");
+        let bref = "Уровень 1. \nПоложите 4 пальца левой руки - мезинец, безымянный, средний и указательный - на клавиши Ф, Ы, В, А. \nЗапомните, что буква А находится под указательным пальцев, а буква Ф - под мезинцем. \nВам нужно набрать следующий текст, постарайтесь не смотреть на клавиатуру. ";
+        runTraining(bref, ["ф", "а"], 10);
+
+        bref = "Уровень 2. \nПоставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. \nМизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. \nЗапомните расположение пальцев. Повторяйте за мной. ";
+        runTraining(bref, ["ы", "в"], 10);
+
+        bref = "Уровень 3. \nПоставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. \nМизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. \nЗапомните расположение пальцев и повторяйте за мной. ";
+        runTraining(bref, ["о", "ж"], 10);
+
+        document.write("Поздравляем! Вы освоили технику слепой печати!")
+    </script>
+</body>
+
+</html>

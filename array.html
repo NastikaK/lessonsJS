@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1.а
+        function getNumberN(n) {
+            let array = [];
+            for (var i = 1; i < n; i++) {
+                array.push(i);
+            }
+            return array;
+        }
+
+        // 1.b
+        function sum(array) {
+            let sum = 0;
+            for (var i = 1; i < array.length; i++) {
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        // 1.c
+        function max(array) {
+            let max = array[0];
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] > max)
+                    max = array[i];
+            }
+            return max;
+        }
+
+        // 1.d
+        function min(array) {
+            let min = array[0];
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] < min)
+                    min = array[i];
+            }
+            return min;
+        }
+
+        // 1.e
+        function getEvenNumbers(array) {
+            let even = [];
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] % 2 == 0)
+                    even.push(array[i]);
+            }
+            return even;
+        }
+
+
+        let n = +prompt("Введите число элементов массива: ");
+        let array = getNumberN(n);
+        alert(sum(array));
+        alert(max(array));
+        alert(min(array));
+        alert(getEvenNumbers(array))
+    </script>
+</body>
+
+</html>
